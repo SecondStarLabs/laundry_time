@@ -1,6 +1,8 @@
 # LaundryTime app
 August 2017 Craft Academy Mid Course Project
 
+[![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/laundry_time/badge.svg?branch=develop)](https://coveralls.io/github/CraftAcademy/laundry_time?branch=develop)
+
 We created an app which allows users to sign up and book a laundry room. You create an account with an email and password. After logging in you will be allowed to book a time slot. You will also see your email, just to be sure who you are logged in as.
 
 In the calendar you will see the next 30 time slots. Available times will be shown as green links, unavailable times will be shown as red text.
