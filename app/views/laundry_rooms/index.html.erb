@@ -1,13 +1,14 @@
 <% if current_user %>
-    <div class="container">
-      <div class="row">
-        <div class="col">
+    <div class='container'>
+      <div class='row'>
+        <div class='col'>
           <h3>Your bookings:</h3>
           <% if current_user.bookings.any? %>
             <% current_user.bookings.sort_by{ |booking| booking.time }.each do |booking| %>
               <% if booking[:time] > (DateTime.now - 5.hours) %>
                 <ul>
                   <li><%= booking[:time].beginning_of_hour.to_formatted_s(:short) %></li>
+                  <%= link_to 'Unbook', laundry_room_delete_booking_path(laundry_room_id: booking.bookable, time: booking.time.to_formatted_s(:short)) %>
                 </ul>
               <% end %>
             <% end %>
@@ -15,7 +16,7 @@
               <p>You don't have any bookings yet.</p>
           <% end %>
         </div>
-        <div class="col">
+        <div class='col'>
           <h3>You may:</h3>
             <ul>
               <li>only book two weeks in advance</li>
@@ -24,7 +25,7 @@
               <li>not leave the laundry room dirty</li>
             </ul>
         </div>
-        <div class="col">
+        <div class='col'>
           <%= image_tag('unicorn.png', align: 'middle', height: 170, class: 'image') %>
         </div>
       </div>
@@ -46,7 +47,7 @@
 <% else %>
   <h1>It's LaundryTime! </h1>
   <h2>Welcome to LaundryTime for Unicorn-Apartments</h2>
-  <div id="centered">
+  <div id='centered'>
     <p>This is where the cleaning magic happens - book the laundry room online and save precious dream time!
     <br>  If you don't have an account, you can sign up with your email - and soon enough your clothes will
       smell of fresh rainbows.
