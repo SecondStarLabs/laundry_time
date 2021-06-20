@@ -11,7 +11,7 @@ Then(/^I see the text "([^"]*)"$/) do |content|
 end
 
 Given(/^there is a laundry room$/) do
-  @laundry = FactoryGirl.create(:laundry_room)
+  @laundry = FactoryBot.create(:laundry_room)
 end
 
 
