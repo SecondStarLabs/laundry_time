@@ -28,7 +28,7 @@ RSpec.describe LaundryRoom, type: :model do
   end
 
   it '#start_time has a value' do
-    expect(subject.start_time.to_s).to eq '2017-09-01 08:00:00 +0200'
+    expect(subject.start_time.to_s).to eq '2017-09-01 13:00:00 +0200'
   end
 
   describe 'booking methods' do
@@ -46,9 +46,9 @@ RSpec.describe LaundryRoom, type: :model do
 
     it 'has occurrences in the future' do
       expect(@first_slot.to_s)
-          .to eq '2017-09-01 08:00:00 +0200'
-      expect(@second_slot.to_s)
           .to eq '2017-09-01 13:00:00 +0200'
+      expect(@second_slot.to_s)
+          .to eq '2017-09-02 08:00:00 +0200'
     end
 
     describe 'User performs booking' do
@@ -99,7 +99,7 @@ RSpec.describe LaundryRoom, type: :model do
         it 'booking has the correct time' do
           perform_booking_by_room.call
           expect(subject.bookings.first.time.to_s)
-              .to eq '2017-09-01 13:00:00 +0200'
+              .to eq '2017-09-02 08:00:00 +0200'
         end
       end
 
