@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :laundry_room do
-    schedule IceCube::Schedule.new
-    
+    schedule = IceCube::Schedule.new
   end
 end
